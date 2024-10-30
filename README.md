@@ -1,2 +1,2 @@
-# dogdok-1-live
- the project used for DOGDOK education.
+# DOGDOK unity beginer course project
+ The project used for unity lessons in DOGDOK game development for beginners series.
