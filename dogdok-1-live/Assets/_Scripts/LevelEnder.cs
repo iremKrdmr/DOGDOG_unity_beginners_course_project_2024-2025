@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LevelEnder : MonoBehaviour
 {
+    public GameManager Manager;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneManager.LoadScene(currentSceneIndex + 1);
-        }
+        if (!other.CompareTag("Player")) return;
+        if (!Manager.AllCoinsCollected()) return;
+
+        Manager.CommitSuccess();
     }
 }

@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class Killbox : MonoBehaviour
 {
+    public GameManager Manager;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
+            Manager.CommitDeath();
         }
     }
 }
